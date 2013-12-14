@@ -1,0 +1,14 @@
+Description: Fix 'defualt' typo, replace with 'default'.
+Author: Bas Couwenberg <sebastic@xs4all.nl>
+Last-Update: 2013-09-30
+--- a/spatialite_network.c
++++ b/spatialite_network.c
+@@ -1853,7 +1853,7 @@ do_help ()
+     fprintf (stderr,
+ 	     "                                  if omitted, GLength(g)\n");
+     fprintf (stderr,
+-	     "                                  will be used by defualt\n\n");
++	     "                                  will be used by default\n\n");
+     fprintf (stderr, "you can specify the following options as well:\n");
+     fprintf (stderr, "----------------------------------------------\n");
+     fprintf (stderr, "--a-star-supported                *default*\n");

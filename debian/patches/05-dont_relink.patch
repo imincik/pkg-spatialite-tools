@@ -1,0 +1,31 @@
+From: Francesco Paolo Lovergine <frankie@debian.org>
+Subject: avoid (superfluous) relinking against the C++ geos library
+Origin: vendor
+
+---
+ configure    |    2 +-
+ configure.ac |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+--- spatialite-tools.orig/configure
++++ spatialite-tools/configure
+@@ -17153,7 +17153,7 @@ if ${ac_cv_lib_geos_c_GEOSTopologyPreser
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgeos_c -lm -lgeos $LIBS"
++LIBS="-lgeos_c $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+--- spatialite-tools.orig/configure.ac
++++ spatialite-tools/configure.ac
+@@ -72,7 +72,7 @@ AC_SUBST(READLINE_LIBS)
+ 
+ AC_CHECK_LIB(expat,XML_ParserCreate,,AC_MSG_ERROR(['expat' is required but it doesn't seem to be installed on this system.]))
+ AC_CHECK_LIB(proj,pj_init_plus,,AC_MSG_ERROR(['libproj' is required but it doesn't seem to be installed on this system.]),-lm)
+-AC_CHECK_LIB(geos_c,GEOSTopologyPreserveSimplify,,AC_MSG_ERROR(['libgeos_c' is required but it doesn't seem to be installed on this system.]),-lm -lgeos)
++AC_CHECK_LIB(geos_c,GEOSTopologyPreserveSimplify,,AC_MSG_ERROR(['libgeos_c' is required but it doesn't seem to be installed on this system.]),)
+ 
+ PKG_CHECK_MODULES([LIBSPATIALITE], [spatialite], , AC_MSG_ERROR(['libspatialite' is required but it doesn't seem to be installed on this system.]))
+ AC_SUBST(LIBSPATIALITE_CFLAGS)

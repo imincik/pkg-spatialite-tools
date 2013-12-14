@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+FULL_VERSION := $(shell dpkg-parsechangelog | grep ^Version | cut -d' ' -f2 | cut -d- -f1)
+VERSION := $(shell echo $(FULL_VERSION) | sed -e "s/~beta[[:digit:]]\+/-BETA/")
+LC_VERSION := $(shell echo $(VERSION) | tr A-Z a-z)
+
+MANPAGES := $(wildcard debian/man/*.*.xml)
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+%:
+	dh $@ --with autoreconf
+
+versions:
+	@echo "Spatialite full version: $(FULL_VERSION)"
+	@echo "Spatialite version: $(LC_VERSION)"
+
+override_dh_clean:
+	dh_clean
+
+	-$(RM) -f $(CURDIR)/debian/man/*.1
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(shell dpkg-buildflags --export=configure)
+
+override_dh_auto_build:
+	# Create man page from DocBook XML
+	for x in $(MANPAGES) ; do \
+	    docbook2x-man $$x ; \
+	    mv `basename $$x | sed 's/.xml$$//'` `dirname $$x` ; \
+	done
+
+	dh_auto_build
+

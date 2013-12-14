@@ -1,0 +1,12 @@
+debian/man/exif_loader.1
+debian/man/shp_doctor.1
+debian/man/spatialite.1
+debian/man/spatialite_convert.1
+debian/man/spatialite_dxf.1
+debian/man/spatialite_gml.1
+debian/man/spatialite_network.1
+debian/man/spatialite_osm_filter.1
+debian/man/spatialite_osm_map.1
+debian/man/spatialite_osm_net.1
+debian/man/spatialite_osm_raw.1
+debian/man/spatialite_tool.1

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='spatialite_network'>
+
+  <refmeta>
+    <refentrytitle>spatialite_network</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>spatialite_network</refname>
+    <refpurpose>analysis/validation tool for topological networks</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>spatialite_network</command>
+      <arg choice='opt'><option>-h</option></arg>
+      <arg choice='opt'><option>-d</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-T</option> <replaceable>table_name</replaceable></arg>
+      <arg choice='opt'><option>-f</option> <replaceable>col_name</replaceable></arg>
+      <arg choice='opt'><option>-t</option> <replaceable>col_name</replaceable></arg>
+      <arg choice='opt'><option>-g</option> <replaceable>col_name</replaceable></arg>
+      <arg choice='opt'><option>-c</option> <replaceable>col_name</replaceable></arg>
+      <group>
+        <arg choice='opt'><option>--a-star-supported</option></arg>
+        <arg choice='opt'><option>--a-star-excluded</option></arg>
+      </group>
+      <arg choice='opt'><option>-n</option> <replaceable>col_name</replaceable></arg>
+      <group>
+        <arg choice='opt'><option>--bidirectional</option></arg>
+        <arg choice='opt'><option>--unidirectional</option>
+          <arg choice='opt'><option>--oneway-tofrom</option> <replaceable>col_name</replaceable></arg>
+          <arg choice='opt'><option>--oneway-fromto</option> <replaceable>col_name</replaceable></arg>
+        </arg>
+      </group>
+      <arg choice='opt'><option>-o</option> <replaceable>table_name</replaceable></arg>
+      <arg choice='opt'><option>--overwrite-output</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>spatialite_network</command> is an analysis / validation tool
+      for topological networks
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>show help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option> <replaceable>pathname</replaceable></term>
+        <term><option>--db-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SpatiaLite db path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-T</option> <replaceable>table_name</replaceable></term>
+        <term><option>--table</option> <replaceable>table_name</replaceable></term>
+        <listitem>
+          <para>the db table to be validated</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-f</option> <replaceable>col_name</replaceable></term>
+        <term><option>--from-column</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>the column for FromNode</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-t</option> <replaceable>col_name</replaceable></term>
+        <term><option>--to-column</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>the column for ToNode</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-g</option> <replaceable>col_name</replaceable></term>
+        <term><option>--geometry-column</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>the column for Geometry</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-c</option> <replaceable>col_name</replaceable></term>
+        <term><option>--cost-column</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>the column for Cost</para>
+          <para>if omitted, GLength(g) will be used by default</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--a-star-supported</option></term>
+        <listitem>
+          <para>support the A* algorithm (default)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--a-star-excluded</option></term>
+        <listitem>
+          <para>no support for the A* algorithm</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-n</option> <replaceable>col_name</replaceable></term>
+        <term><option>--name-column</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>the column for RoadName</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--bidirectional</option></term>
+        <listitem>
+          <para>assume bidirectional arcs (default)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--unidirectional</option></term>
+        <listitem>
+          <para>don't assume bidirectional arcs</para>
+          <para>
+            if *bidirectional* each arc connecting FromNode to ToNode is
+            implicitly connecting ToNode to FromNode as well; in this case
+            you can select the following further options:
+            <option>--oneway-tofrom</option> &amp;
+            <option>--oneway-fromto</option>
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--oneway-tofrom</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>OneWay To->From column name</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--oneway-fromto</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>OneWay From->To column name</para>
+          <para>
+            both columns are expected to contain BOOLEAN values [1-0];
+            1 means that the arc connection in the given direction is valid,
+            otherwise 0 means a forbidden connection
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-o</option> <replaceable>table_name</replaceable></term>
+        <term><option>--output-table</option> <replaceable>table_name</replaceable></term>
+        <listitem>
+          <para>create a permanent NETWORK-DATA table</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--overwrite-output</option></term>
+        <listitem>
+          <para>drop and recreate <replaceable>table_name</replaceable> if it exists</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

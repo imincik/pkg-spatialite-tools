@@ -1,0 +1,81 @@
+spatialite-tools (4.1.1-2) experimental; urgency=low
+
+  * Bump Standards-Version to 3.9.5, no changes required.
+  * Require at least libspatialite version 4.1.1.
+
+ -- Bas Couwenberg <sebastic@xs4all.nl>  Sat, 14 Dec 2013 17:04:24 +0100
+
+spatialite-tools (4.1.1-1) experimental; urgency=low
+
+  * New upstream version.
+  * Add myself to Uploaders.
+  * Update watch file.
+  * Use dh-autoreconf to run autoreconf during build.
+  * Use canonical URLs for Vcs-* fields.
+  * Update Homepage URL.
+  * Update copyright file.
+  * Properly link sqlite3. (closes: #713644)
+  * Pass all hardening flags to configure.
+  * Add lintian override for no upstream changelog, link to timeline.
+  * Add patch to fix 'successfully' typo.
+  * Add patch to fix 'indifferently' typo.
+  * Add patch to fix 'default' typo.
+  * Add man page for specialite tools:
+    - exif_loader
+    - shp_doctor
+    - spatialite
+    - spatialite_convert
+    - spatialite_dxf
+    - spatialite_gml
+    - spatialite_network
+    - spatialite_osm_filter
+    - spatialite_osm_map
+    - spatialite_osm_net
+    - spatialite_osm_raw
+    - spatialite_tool
+    (closes: #703344)
+  * Bump dephelper compatibility to 9.
+  * Change priority to optional.
+
+ -- Bas Couwenberg <sebastic@xs4all.nl>  Mon, 30 Sep 2013 02:35:52 +0200
+
+spatialite-tools (4.1.0-1) UNRELEASED; urgency=low
+
+  * New upstream version
+
+ -- Jerome Villeneuve Larouche <jlarouche@mapgears.com>  Fri, 23 Aug 2013 11:03:13 -0400
+
+spatialite-tools (4.0.0-1) experimental; urgency=low
+
+  * New upstream version
+  * Bump requirement of libspatialite to >= 4.0.0
+  * Added hardening instructions to debian/rules
+
+ -- David Paleino <dapal@debian.org>  Sat, 01 Dec 2012 21:18:10 +0100
+
+spatialite-tools (3.1.0b-1) unstable; urgency=low
+
+  * New upstream version
+  * Patches adapted to new source
+  * Standards-Version bump to 3.9.4, no changes needed
+  * Updated debian/copyright
+  * Added Build-Depends on libreadosm-dev
+
+ -- David Paleino <dapal@debian.org>  Thu, 04 Oct 2012 00:13:01 +0200
+
+spatialite-tools (3.0.0-2) unstable; urgency=low
+
+  * Fixed debian/watch to properly mangle upstream versioning scheme
+  * Added DEP-3 header to 05-dont_relink.patch
+
+ -- David Paleino <dapal@debian.org>  Sat, 14 Apr 2012 11:55:00 +0200
+
+spatialite-tools (3.0.0-1) unstable; urgency=low
+
+  * Initial release.
+  * Spatialite-tools used to be distributed with spatialite source, this
+    is now different and this package is thought to be built apart.
+  * Added the same 05-dont_relink.patch new patch used in spatialite
+    to avoid relinking.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Wed, 29 Feb 2012 13:00:58 +0100

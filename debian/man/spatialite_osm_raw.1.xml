@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='spatialite_osm_raw'>
+
+  <refmeta>
+    <refentrytitle>spatialite_osm_raw</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>spatialite_osm_raw</refname>
+    <refpurpose>load "raw" OSM maps into a SpatiaLite DB</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>spatialite_osm_raw</command>
+      <arg choice='opt'><option>-h</option></arg>
+      <arg choice='opt'><option>-o</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-d</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-cs</option> <replaceable>num</replaceable></arg>
+      <arg choice='opt'><option>-m</option></arg>
+      <arg choice='opt'><option>-jo</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>spatialite_osm_raw</command> is a tool for loading "raw" OSM maps
+      into a SpatiaLite DB.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>show help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-o</option> <replaceable>pathname</replaceable></term>
+        <term><option>--osm-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the OSM-XML file path</para>
+          <para>
+             both OSM-XML (*.osm) and OSM-ProtoBuf (*.osm.pbf) are
+             indifferently supported.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option> <replaceable>pathname</replaceable></term>
+        <term><option>--db-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SpatiaLite DB path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-cs</option> <replaceable>num</replaceable></term>
+        <term><option>--cache-size</option> <replaceable>num</replaceable></term>
+        <listitem>
+          <para>DB cache size (how many pages)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-m</option></term>
+        <term><option>--in-memory</option></term>
+        <listitem>
+          <para>using IN-MEMORY database</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-jo</option></term>
+        <term><option>--journal-off</option></term>
+        <listitem>
+          <para>unsafe (but faster) mode</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

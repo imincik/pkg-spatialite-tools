@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='spatialite_gml'>
+
+  <refmeta>
+    <refentrytitle>spatialite_gml</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>spatialite_gml</refname>
+    <refpurpose>load GML into a SpatiaLite DB</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>spatialite_gml</command>
+      <arg choice='opt'><option>-h</option></arg>
+      <arg choice='opt'><option>-g</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-d</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-t</option> <replaceable>name</replaceable></arg>
+      <arg choice='opt'><option>-m</option></arg>
+      <arg choice='opt'><option>-n</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>spatialite_gml</command> is a tool for loading GML into a
+      SpatiaLite DB.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>show help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-g</option> <replaceable>pathname</replaceable></term>
+        <term><option>--gml-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the GML-XML file path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option> <replaceable>pathname</replaceable></term>
+        <term><option>--db-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SpatiaLite DB path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-t</option> <replaceable>name</replaceable></term>
+        <term><option>--table-name</option> <replaceable>name</replaceable></term>
+        <listitem>
+          <para>the DB table name</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-m</option></term>
+        <term><option>--in-memory</option></term>
+        <listitem>
+          <para>using IN-MEMORY database</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-n</option></term>
+        <term><option>--no-spatial-index</option></term>
+        <listitem>
+          <para>suppress R*Tree generation</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

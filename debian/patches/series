@@ -1,0 +1,7 @@
+00-add_automake_foreign.patch
+03-fix_typos.patch
+#05-dont_relink.patch
+06-link-sqlite3.patch
+07-succesfully-typo.patch
+08-indifferently-typo.patch
+09-default-typo.patch

@@ -1,0 +1,42 @@
+Source: spatialite-tools
+Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
+Uploaders: Francesco Paolo Lovergine <frankie@debian.org>,
+           David Paleino <dapal@debian.org>,
+           Bas Couwenberg <sebastic@xs4all.nl>
+Section: science
+Priority: optional
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               dh-autoreconf,
+               libspatialite-dev (>= 4.1.1~),
+               libsqlite3-dev,
+               libreadline-dev,
+               pkg-config,
+               libexpat1-dev,
+               libfreexl-dev,
+               libgeos-dev (>= 3.3.0),
+               libproj-dev,
+               libreadosm-dev,
+               zlib1g-dev,
+               docbook2x,
+               docbook-xsl,
+               docbook-xml,
+               xsltproc
+Standards-Version: 3.9.5
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-grass/spatialite-tools.git
+Vcs-Git: git://anonscm.debian.org/pkg-grass/spatialite-tools.git
+Homepage: https://www.gaia-gis.it/fossil/spatialite-tools/
+
+Package: spatialite-bin
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Geospatial extension for SQLite - tools
+ The SpatiaLite extension enables SQLite to support spatial (geometry) data
+ in a way conformant to OpenGis specifications, with both WKT and WKB formats.
+ .
+ Spatialite also includes Virtualshape and Virtualtext to enable accessing
+ shapefiles and csv/text files as virtual tables.
+ .
+ This package contains tools useful to manage SQLite databases.
+

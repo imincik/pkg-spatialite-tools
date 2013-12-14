@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='shp_doctor'>
+
+  <refmeta>
+    <refentrytitle>shp_doctor</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>shp_doctor</refname>
+    <refpurpose>analysis/sanitizing tool for SHAPEFILES</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>shp_doctor</command>
+      <arg choice='opt'><option>-h</option></arg>
+      <arg choice='opt'><option>-i</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>--analyze</option></arg>
+      <arg choice='opt'><option>--ignore-shape-type</option></arg>
+      <arg choice='opt'><option>--ignore-extent</option></arg>
+      <arg choice='opt'><option>--ignore-shx</option></arg>
+      <arg choice='opt'><option>-dbf</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>shp_doctor</command> is an analysis/sanitizing tool for SHAPEFILES.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>print help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-i</option> <replaceable>pathname</replaceable></term>
+        <term><option>--in-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SHP path (no suffix) or the full DBF path (&minus;dbf)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--analyze</option></term>
+        <listitem>
+          <para>perform analysis (default)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--ignore-shape-type</option></term>
+        <listitem>
+          <para>ignore entities' shape&minus;type</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--ignore-extent</option></term>
+        <listitem>
+          <para>ignore coord consistency</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--ignore-shx</option></term>
+        <listitem>
+          <para>ignore the SHX file</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-dbf</option></term>
+        <term><option>--bare-dbf</option></term>
+        <listitem>
+          <para>bare DBF check</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

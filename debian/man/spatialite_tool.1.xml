@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='spatialite_tool'>
+
+  <refmeta>
+    <refentrytitle>spatialite_tool</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>spatialite_tool</refname>
+    <refpurpose>CLI tool for Shapefile import/export</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>spatialite_tool</command>
+      <group>
+        <arg choice='plain'><option>-h</option></arg>
+        <arg choice='plain'><option>-i</option></arg>
+        <arg choice='plain'><option>-e</option></arg>
+      </group>
+      <arg choice='opt'><option>-dbf</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-shp</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-d</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-t</option> <replaceable>table_name</replaceable></arg>
+      <arg choice='opt'><option>-g</option> <replaceable>col_name</replaceable></arg>
+      <arg choice='opt'><option>-c</option> <replaceable>charset_name</replaceable></arg>
+      <arg choice='opt'><option>-s</option> <replaceable>SRID</replaceable></arg>
+      <arg choice='opt'><option>--type</option>
+        <group>
+          <arg choice='opt'>POINT</arg>
+          <arg choice='opt'>LINESTRING</arg>
+          <arg choice='opt'>POLYGON</arg>
+          <arg choice='opt'>MULTIPOINT</arg>
+        </group>
+      </arg>
+      <arg choice='opt'><option>-2</option></arg>
+      <arg choice='opt'><option>-k</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>spatialite_tool</command> is an utility CLI tool for Shapefile
+      import / export.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>show help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-i</option></term>
+        <term><option>--import</option></term>
+        <listitem>
+          <para>import (CSV/TXT, DBF or SHP)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-e</option></term>
+        <term><option>--export-shp</option></term>
+        <listitem>
+          <para>exporting some shapefile</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-dbf</option> <replaceable>pathname</replaceable></term>
+        <term><option>--dbf-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the full DBF path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-shp</option> <replaceable>pathname</replaceable></term>
+        <term><option>--shapefile</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the shapefile path (NO SUFFIX)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option> <replaceable>pathname</replaceable></term>
+        <term><option>--db-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SpatiaLite DB path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-t</option> <replaceable>table_name</replaceable></term>
+        <term><option>--table</option> <replaceable>table_name</replaceable></term>
+        <listitem>
+          <para>the db geotable</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-g</option> <replaceable>col_name</replaceable></term>
+        <term><option>--geometry-column</option> <replaceable>col_name</replaceable></term>
+        <listitem>
+          <para>the Geometry column</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-c</option> <replaceable>charset_name</replaceable></term>
+        <term><option>--charset</option> <replaceable>charset_name</replaceable></term>
+        <listitem>
+          <para>a charset name</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-s</option> <replaceable>SRID</replaceable></term>
+        <term><option>--srid</option> <replaceable>SRID</replaceable></term>
+        <listitem>
+          <para>the SRID</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--type</option> [POINT | LINESTRING | POLYGON | MULTIPOINT]</term>
+        <listitem>
+          <para>the geometry type</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-2</option></term>
+        <term><option>--coerce-2d</option></term>
+        <listitem>
+          <para>coerce to 2D geoms (x,y)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-k</option></term>
+        <term><option>--compressed</option></term>
+        <listitem>
+          <para>apply geometry compression</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+  <refsect1 id='example'>
+    <title>EXAMPLE</title>
+
+    <informalexample>
+      <screen>
+spatialite_tool &minus;i &minus;dbf abc.dbf &minus;d db.sqlite &minus;t tbl &minus;c CP1252
+      </screen>
+    </informalexample>
+
+    <informalexample>
+      <screen>
+spatialite_tool &minus;i &minus;shp abc &minus;d db.sqlite &minus;t tbl &minus;c CP1252 [&minus;s 4326] [&minus;g geom]
+      </screen>
+    </informalexample>
+
+    <informalexample>
+      <screen>
+spatialite_tool &minus;i &minus;shp abc &minus;d db.sqlite &minus;t tbl &minus;c CP1252 [&minus;s 4326] [&minus;2] [&minus;k]
+      </screen>
+    </informalexample>
+
+    <informalexample>
+      <screen>
+spatialite_tool &minus;e &minus;shp abc &minus;d db.sqlite &minus;t tbl &minus;g geom &minus;c CP1252 [&minus;&minus;type POINT]
+      </screen>
+    </informalexample>
+
+  </refsect1>
+
+</refentry>

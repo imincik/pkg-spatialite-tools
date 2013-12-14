@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='spatialite_osm_net'>
+
+  <refmeta>
+    <refentrytitle>spatialite_osm_net</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>spatialite_osm_net</refname>
+    <refpurpose>load OSM-XML roads into a SpatiaLite DB</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>spatialite_osm_net</command>
+      <arg choice='opt'><option>-h</option></arg>
+      <arg choice='opt'><option>-o</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-d</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-T</option> <replaceable>table_name</replaceable></arg>
+      <arg choice='opt'><option>-cs</option> <replaceable>num</replaceable></arg>
+      <arg choice='opt'><option>-m</option></arg>
+      <arg choice='opt'><option>-n</option></arg>
+      <arg choice='opt'><option>-jo</option></arg>
+      <arg choice='opt'><option>-2</option></arg>
+      <group>
+        <arg choice='opt'><option>--roads</option></arg>
+        <arg choice='opt'><option>--railways</option></arg>
+      </group>
+      <arg choice='opt'><option>-ot</option> <replaceable>path</replaceable></arg>
+      <arg choice='opt'><option>-tf</option> <replaceable>path</replaceable></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>spatialite_osm_net</command> is a tool for loading OSM-XML roads
+      into a SpatiaLite DB.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>show help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-o</option> <replaceable>pathname</replaceable></term>
+        <term><option>--osm-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the OSM-XML file path</para>
+          <para>
+             both OSM-XML (*.osm) and OSM-ProtoBuf (*.osm.pbf) are
+             indifferently supported.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option> <replaceable>pathname</replaceable></term>
+        <term><option>--db-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SpatiaLite DB path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-T</option> <replaceable>table_name</replaceable></term>
+        <term><option>--table</option> <replaceable>table_name</replaceable></term>
+        <listitem>
+          <para>the db table to be feeded</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-cs</option> <replaceable>num</replaceable></term>
+        <term><option>--cache-size</option> <replaceable>num</replaceable></term>
+        <listitem>
+          <para>DB cache size (how many pages)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-m</option></term>
+        <term><option>--in-memory</option></term>
+        <listitem>
+          <para>using IN-MEMORY database</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-n</option></term>
+        <term><option>--no-spatial-index</option></term>
+        <listitem>
+          <para>suppress R*Tree generation</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-jo</option></term>
+        <term><option>--journal-off</option></term>
+        <listitem>
+          <para>unsafe (but faster) mode</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-2</option></term>
+        <term><option>--undirectional</option></term>
+        <listitem>
+          <para>double arcs</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--roads</option></term>
+        <listitem>
+          <para>extract roads (default)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--railways</option></term>
+        <listitem>
+          <para>extract railways</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-ot</option> <replaceable>path</replaceable></term>
+        <term><option>--out-template</option> <replaceable>path</replaceable></term>
+        <listitem>
+          <para>creates a default template-file</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-tf</option> <replaceable>path</replaceable></term>
+        <term><option>--template-file</option> <replaceable>path</replaceable></term>
+        <listitem>
+          <para>using a template-file</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

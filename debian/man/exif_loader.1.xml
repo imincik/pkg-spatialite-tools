@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='exif_loader'>
+
+  <refmeta>
+    <refentrytitle>exif_loader</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>exif_loader</refname>
+    <refpurpose>upload JPEG/EXIF photos into a DB</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>exif_loader</command>
+      <arg choice='opt'><option>-h</option></arg>
+      <arg choice='opt'><option>-d</option> <replaceable>pathname</replaceable></arg>
+      <group>
+        <arg choice='opt'><option>-D</option> <replaceable>dir_path</replaceable></arg>
+        <arg choice='opt'><option>-f</option> <replaceable>file_name</replaceable></arg>
+      </group>
+      <group>
+        <arg choice='opt'><option>--any-exif</option></arg>
+        <arg choice='opt'><option>--gps-exif-only</option></arg>
+      </group>
+      <group>
+        <arg choice='opt'><option>--metadata</option></arg>
+        <arg choice='opt'><option>--no-metadata</option></arg>
+      </group>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>exif_loader</command> is a tool for uploading JPEG/EXIF photos
+      into a DB, preserving full Exif metadata and building Geometry from GPS
+      tags (if present).
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>print help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option> <replaceable>pathname</replaceable></term>
+        <term><option>--db-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SpatiaLite db path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-D</option> <replaceable>dir_path</replaceable></term>
+        <term><option>--dir</option> <replaceable>dir_path</replaceable></term>
+        <listitem>
+          <para>the DIR path containing EXIF files</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-f</option> <replaceable>file_name</replaceable></term>
+        <term><option>--file-path</option> <replaceable>file_name</replaceable></term>
+        <listitem>
+          <para>a single EXIF file</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--any-exif</option></term>
+        <listitem>
+          <para>don't limit to GPS only EXIF tags (default)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--gps-exif-only</option></term>
+        <listitem>
+          <para>only load GPS EXIF tags</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--metadata</option></term>
+        <listitem>
+          <para>also load EXIF meta data (default)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--no-metadata</option></term>
+        <listitem>
+          <para>don't load any EXIF meta data</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

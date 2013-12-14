@@ -1,0 +1,25 @@
+Description: Fix 'succesfully typo, replace with 'successfully'.
+Author: Bas Couwenberg <sebastic@xs4all.nl>
+Last-Update: 2013-09-30
+--- a/shell.c
++++ b/shell.c
+@@ -2670,7 +2670,7 @@ static int do_meta_command(char *zLine,
+           }
+           else
+               fprintf (stderr, "Unable to parse: %s\n", dxf_path);
+-          fprintf(stderr, "\n*** DXF file succesfully loaded\n"); 
++          fprintf(stderr, "\n*** DXF file successfully loaded\n"); 
+ stop_dxf:
+       /* destroying the DXF parser */
+           gaiaDestroyDxfParser (dxf);
+--- a/spatialite_dxf.c
++++ b/spatialite_dxf.c
+@@ -528,7 +528,7 @@ main (int argc, char *argv[])
+ 	  ret = sqlite3_backup_finish (backup);
+ 	  sqlite3_close (handle);
+ 	  handle = disk_handle;
+-	  printf ("\tIN_MEMORY database succesfully exported\n");
++	  printf ("\tIN_MEMORY database successfully exported\n");
+       }
+ 
+ /* memory cleanup */

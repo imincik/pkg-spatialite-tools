@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='spatialite'>
+
+  <refmeta>
+    <refentrytitle>spatialite</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>spatialite</refname>
+    <refpurpose>CLI backend for SpatiaLite</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>spatialite</command>
+      <arg choice='opt'><replaceable>OPTIONS</replaceable></arg>
+      <arg choice='plain'><replaceable>FILENAME</replaceable></arg>
+      <arg choice='opt'><replaceable>SQL</replaceable></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>spatialite</command> is a CLI backend for SpatiaLite.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-bail</option></term>
+        <listitem>
+          <para>stop after hitting an error</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-batch</option></term>
+        <listitem>
+          <para>force batch I/O</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-column</option></term>
+        <listitem>
+          <para>set output mode to 'column'</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-cmd</option> <replaceable>command</replaceable></term>
+        <listitem>
+          <para>run <replaceable>command</replaceable> before reading stdin</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-csv</option></term>
+        <listitem>
+          <para>set output mode to 'csv'</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-echo</option></term>
+        <listitem>
+          <para>print commands before execution</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-init</option> <replaceable>filename</replaceable></term>
+        <listitem>
+          <para>read/process named file</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-[no]header</option></term>
+        <listitem>
+          <para>turn headers on or off</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-help</option></term>
+        <listitem>
+          <para>show help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-html</option></term>
+        <listitem>
+          <para>set output mode to HTML</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-interactive</option></term>
+        <listitem>
+          <para>force interactive I/O</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-line</option></term>
+        <listitem>
+          <para>set output mode to 'line'</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-list</option></term>
+        <listitem>
+          <para>set output mode to 'list'</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-multiplex</option></term>
+        <listitem>
+          <para>enable the multiplexor VFS (if support built in)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-nullvalue</option> '<replaceable>text</replaceable>'</term>
+        <listitem>
+          <para>set text string for NULL values</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-separator</option> '<replaceable>x</replaceable>'</term>
+        <listitem>
+          <para>set output field separator (|)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-stats</option></term>
+        <listitem>
+          <para>print memory stats before each finalize</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-version</option></term>
+        <listitem>
+          <para>show SQLite version</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-vfs</option> <replaceable>NAME</replaceable></term>
+        <listitem>
+          <para>use NAME as the default VFS</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-vfstrace</option></term>
+        <listitem>
+          <para>enable tracing of all VFS calls (if support built in)</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

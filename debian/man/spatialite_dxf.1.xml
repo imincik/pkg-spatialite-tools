@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='spatialite_dxf'>
+
+  <refmeta>
+    <refentrytitle>spatialite_dxf</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>spatialite_dxf</refname>
+    <refpurpose>an utility for DXF import</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>spatialite_dxf</command>
+      <arg choice='opt'><option>-h</option></arg>
+      <arg choice='opt'><option>-d</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-x</option> <replaceable>pathname</replaceable></arg>
+      <arg choice='opt'><option>-s</option> <replaceable>num</replaceable></arg>
+      <arg choice='opt'><option>-p</option> <replaceable>layer_prefix</replaceable></arg>
+      <arg choice='opt'><option>-l</option> <replaceable>layer_name</replaceable></arg>
+      <arg choice='opt'><option>-all</option></arg>
+      <group>
+        <arg choice='opt'><option>-distinct</option></arg>
+        <arg choice='opt'><option>-mixed</option></arg>
+      </group>
+      <group>
+        <arg choice='opt'><option>-auto</option></arg>
+        <arg choice='opt'><option>-2d</option></arg>
+        <arg choice='opt'><option>-3d</option></arg>
+      </group>
+      <group>
+        <arg choice='opt'><option>-linked</option></arg>
+        <arg choice='opt'><option>-unlinked</option></arg>
+      </group>
+      <arg choice='opt'><option>-a</option></arg>
+      <arg choice='opt'><option>-m</option></arg>
+      <arg choice='opt'><option>-jo</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>spatialite_dxf</command> is an utility CLI tool for DXF import.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>print help message</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-d</option> <replaceable>pathname</replaceable></term>
+        <term><option>--db-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the SpatiaLite DB path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-x</option> <replaceable>pathname</replaceable></term>
+        <term><option>--dxf-path</option> <replaceable>pathname</replaceable></term>
+        <listitem>
+          <para>the input DXF path</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-s</option> <replaceable>num</replaceable></term>
+        <term><option>--srid</option> <replaceable>num</replaceable></term>
+        <listitem>
+          <para>an explicit SRID value</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-p</option> <replaceable>layer_prefix</replaceable></term>
+        <term><option>--prefix</option> <replaceable>layer_prefix</replaceable></term>
+        <listitem>
+          <para>prefix for DB layer names</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-l</option> <replaceable>layer_name</replaceable></term>
+        <term><option>--layer</option> <replaceable>layer_name</replaceable></term>
+        <listitem>
+          <para>will import a single DXF layer</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-all</option></term>
+        <term><option>--all-layers</option></term>
+        <listitem>
+          <para>will import all layers (default)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-distinct</option></term>
+        <term><option>--distinct-layers</option></term>
+        <listitem>
+          <para>respecting individual DXF layers</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-mixed</option></term>
+        <term><option>--mixed-layers</option></term>
+        <listitem>
+          <para>merging layers altogether by type</para>
+          <para>distinct|mixed are mutually exclusive; by default: distinct</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-auto</option></term>
+        <term><option>--auto_2d_3d</option></term>
+        <listitem>
+          <para>2D/3D based on input geometries</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-2d</option></term>
+        <term><option>--force_2d</option></term>
+        <listitem>
+          <para>unconditionally force 2D</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-3d</option></term>
+        <term><option>--force_3d</option></term>
+        <listitem>
+          <para>unconditionally force 3D</para>
+          <para> auto|2d|3d are mutually exclusive; by default: auto</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-linked</option></term>
+        <term><option>--linked-rings</option></term>
+        <listitem>
+          <para>support linked polygon rings</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-unlinked</option></term>
+        <term><option>--unlinked-rings</option></term>
+        <listitem>
+          <para>support unlinked polygon rings</para>
+          <para>linked|unlinked are mutually exclusive; by default: none</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-a</option></term>
+        <term><option>--append</option></term>
+        <listitem>
+          <para>appends to already exixting tables</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-m</option></term>
+        <term><option>--in-memory</option></term>
+        <listitem>
+          <para>using IN-MEMORY database</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-jo</option></term>
+        <term><option>--journal-off</option></term>
+        <listitem>
+          <para>unsafe (but faster) mode</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </refsect1>
+
+</refentry>

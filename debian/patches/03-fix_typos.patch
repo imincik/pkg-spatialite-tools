@@ -1,0 +1,125 @@
+From: David Paleino <dapal@debian.org>
+Subject: fix typos in source code
+Origin: vendor
+Forwarded: no
+
+---
+ shell.c              |    2 +-
+ spatialite_convert.c |    2 +-
+ spatialite_gml.c     |    2 +-
+ spatialite_osm_map.c |    4 ++--
+ spatialite_osm_net.c |   10 +++++-----
+ spatialite_osm_raw.c |    2 +-
+ 6 files changed, 11 insertions(+), 11 deletions(-)
+
+--- a/spatialite_gml.c
++++ b/spatialite_gml.c
+@@ -1936,7 +1936,7 @@ main (int argc, char *argv[])
+ 	  ret = sqlite3_backup_finish (backup);
+ 	  sqlite3_close (handle);
+ 	  handle = disk_db_handle;
+-	  printf ("\tIN_MEMORY database succesfully exported\n");
++	  printf ("\tIN_MEMORY database successfully exported\n");
+       }
+ 
+     sqlite3_close (handle);
+--- a/spatialite_osm_map.c
++++ b/spatialite_osm_map.c
+@@ -1980,7 +1980,7 @@ db_vacuum (sqlite3 * db_handle)
+ 	  sqlite3_free (sql_err);
+ 	  return;
+       }
+-    printf ("\tAll done: OSM map was succesfully loaded\n");
++    printf ("\tAll done: OSM map was successfully loaded\n");
+ }
+ 
+ static void
+@@ -2825,7 +2825,7 @@ main (int argc, char *argv[])
+ 	  ret = sqlite3_backup_finish (backup);
+ 	  sqlite3_close (handle);
+ 	  handle = disk_db_handle;
+-	  printf ("\tIN_MEMORY database succesfully exported\n");
++	  printf ("\tIN_MEMORY database successfully exported\n");
+       }
+ 
+ /* VACUUMing */
+--- a/spatialite_osm_net.c
++++ b/spatialite_osm_net.c
+@@ -1330,7 +1330,7 @@ create_qualified_nodes (struct aux_param
+ 	  fprintf (stderr, "COMMIT TRANSACTION error: %s\n", sql_err);
+ 	  sqlite3_free (sql_err);
+       }
+-    printf ("\tHelper table '%s_nodes' succesfully created\n", table);
++    printf ("\tHelper table '%s_nodes' successfully created\n", table);
+     return 1;
+   error:
+     if (query_stmt != NULL)
+@@ -1759,7 +1759,7 @@ db_vacuum (sqlite3 * handle)
+ 	  sqlite3_free (sql_err);
+ 	  return;
+       }
+-    printf ("\tAll done: OSM graph was succesfully loaded\n");
++    printf ("\tAll done: OSM graph was successfully loaded\n");
+ }
+ 
+ static int
+@@ -2481,7 +2481,7 @@ main (int argc, char *argv[])
+ 		error = 1;
+ 	    }
+ 	  if (print_template (template_path, railways))
+-	      printf ("template-file \"%s\" succesfully created\n\n",
++	      printf ("template-file \"%s\" successfully created\n\n",
+ 		      template_path);
+ 	  return 0;
+       }
+@@ -2518,7 +2518,7 @@ main (int argc, char *argv[])
+ 		error = 1;
+ 	    }
+ 	  if (parse_template (&params, template_path))
+-	      printf ("template-file \"%s\" succesfully acquired\n\n",
++	      printf ("template-file \"%s\" successfully acquired\n\n",
+ 		      template_path);
+ 	  else
+ 	      return -1;
+@@ -2740,7 +2740,7 @@ main (int argc, char *argv[])
+ 	  ret = sqlite3_backup_finish (backup);
+ 	  sqlite3_close (handle);
+ 	  handle = disk_handle;
+-	  printf ("\tIN_MEMORY database succesfully exported\n");
++	  printf ("\tIN_MEMORY database successfully exported\n");
+       }
+ /* VACUUMing */
+     db_vacuum (handle);
+--- a/spatialite_osm_raw.c
++++ b/spatialite_osm_raw.c
+@@ -1219,7 +1219,7 @@ main (int argc, char *argv[])
+ 	  ret = sqlite3_backup_finish (backup);
+ 	  sqlite3_close (handle);
+ 	  handle = disk_db_handle;
+-	  printf ("\tIN_MEMORY database succesfully exported\n");
++	  printf ("\tIN_MEMORY database successfully exported\n");
+       }
+ 
+ /* closing the DB connection */
+--- a/shell.c
++++ b/shell.c
+@@ -2787,7 +2787,7 @@ stop_dxf:
+           {
+               int cnt1 = sqlite3_total_changes(p->db);
+               if (cnt1 > cnt0)
+-                  fprintf(stderr, "SpatialTable \"%s\" succesfully removed\n", azArg[1]);
++                  fprintf(stderr, "SpatialTable \"%s\" successfully removed\n", azArg[1]);
+               else
+                   fprintf(stderr, "SpatialTable \"%s\" seems not to exist\n", azArg[1]);
+           }
+--- a/spatialite_convert.c
++++ b/spatialite_convert.c
+@@ -7018,7 +7018,7 @@ main (int argc, char *argv[])
+ 	  sqlite3_free (sql_err);
+ 	  goto stop;
+       }
+-    printf ("\tDB-file succesfully converted !!!\n\n");
++    printf ("\tDB-file successfully converted !!!\n\n");
+     goto end;
+ 
+ /* closing the DB */

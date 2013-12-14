@@ -1,0 +1,30 @@
+From: Francesco Paolo Lovergine <frankie@debian.org>
+Subject: add 'foreign' to AUTOMAKE_OPTIONS
+Origin: vendor
+Forwarded: no
+
+---
+ Makefile.am |    2 +-
+ Makefile.in |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -63,5 +63,5 @@ EXTRA_DIST = makefile.vc nmake.opt \
+ 	Makefile-static-Linux \
+ 	Makefile-static-MacOsX
+ 
+-AUTOMAKE_OPTIONS = dist-zip
++AUTOMAKE_OPTIONS = dist-zip foreign
+ 
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -362,7 +362,7 @@ EXTRA_DIST = makefile.vc nmake.opt \
+ 	Makefile-static-Linux \
+ 	Makefile-static-MacOsX
+ 
+-AUTOMAKE_OPTIONS = dist-zip
++AUTOMAKE_OPTIONS = dist-zip foreign
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
